@@ -1,11 +1,12 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(cd \"C:/Users/Gnash/Development/DataAnalytics/Nova/apps/api\" && uv sync 2>&1)"
+    ]
+  },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "claude-flow"
-  ],
-  "permissions": {
-    "allow": [
-      "Bash(cd:*)"
-    ]
-  }
+  ]
 }

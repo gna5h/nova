@@ -5,7 +5,13 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+# Import step modules to trigger @register_step decorators before any request
+import core.steps.io  # noqa: F401
+import core.steps.profile  # noqa: F401
+
 from routes.health import router as health_router
+from routes.samples import router as samples_router
+from routes.sessions import router as sessions_router
 from routes.steps import router as steps_router
 
 app = FastAPI(
@@ -27,3 +33,5 @@ app.add_middleware(
 
 app.include_router(health_router)
 app.include_router(steps_router)
+app.include_router(sessions_router)
+app.include_router(samples_router)
